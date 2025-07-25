@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      
+      "@routers/*": ["backend/routers/*"],
+      "@types/*": ["shared/types/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
