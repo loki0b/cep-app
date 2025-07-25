@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import cepRouter from "routers/cep"
+import cepRouter from "@routers/cep"
 import type { Express } from "express";
 
 const app: Express = express();
