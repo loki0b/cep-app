@@ -1,15 +1,19 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import UserOutput from "@components/userOutput";
+import type { Address } from "@sharedtypes/address";
 
-const UserInput = () => {
+
+function UserInput() {
     const [cep, setCep] = useState("");
-    const [city, setCity] = useState("");
-    const [showCity, setShowCity] = useState(false);
-
-    useEffect(() => {
-        setShowCity(true);
-    }, [city]);
+    const [userAddress, setAddress] = useState<Address>({
+        street: "",
+        neighborhood: "",
+        city: "",
+        state: ""
+    });
+    const [showAddress, setShowAddress] = useState(false);
 
     async function handleClick(): Promise<any> {
 
@@ -25,20 +29,23 @@ const UserInput = () => {
             }
         });
         const body = await response.json();
-        const { city } = body;
 
         setCep("");
-        setCity(city);
+        setAddress({
+            street: body.street,
+            neighborhood: body.neighborhood,
+            city: body.city,
+            state: body.state
+        });
+        setShowAddress(true);
     }
-
-    
 
     return (
         <div>
             <h1>Digite um CEP</h1>
             <input type="text" value={cep} onChange={(e) => setCep(e.target.value)}/>
             <button onClick={handleClick}>Enviar</button>
-            {showCity && <h1>{city}</h1>}
+            {showAddress && <UserOutput {...userAddress}/>}
         </div>
     )
 }
