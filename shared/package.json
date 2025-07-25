@@ -1,0 +1,6 @@
+{
+  "name": "@web-app/shared",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
