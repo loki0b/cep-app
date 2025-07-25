@@ -1,6 +1,4 @@
-'use client'
-
-import type { Address } from "@sharedtypes/address"
+import type { Address } from "types"
 
 function UserOutput({street, neighborhood, city, state}: Address) {
     const userAddress: string = `${street}, ${neighborhood}, ${city} - ${state}`;

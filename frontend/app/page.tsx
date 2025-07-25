@@ -1,7 +1,9 @@
-import UserInput from "@components/userInput"
+import InputCard from "@components/InputCard";
 
 export default function Home() {
     return (
-        <UserInput />
+        <div className="flex h-screen justify-center items-center">
+            <InputCard />
+        </div>
     )
 }
