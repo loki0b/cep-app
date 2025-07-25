@@ -1,8 +1,8 @@
-type address = {
+type Address = {
     street: string;
     neighborhood: string;
     city: string;
     state: string;
 }
 
-export type { address };
+export type { Address };
