@@ -15,7 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "@routers/*": ["backend/routers/*"],
-      "@types/*": ["shared/types/*"]
+      "@components/*": ["frontend/components/*"],
+      "@sharedtypes/*": ["shared/types/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
